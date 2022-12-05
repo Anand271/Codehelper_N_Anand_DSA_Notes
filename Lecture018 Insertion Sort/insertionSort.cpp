@@ -8,17 +8,19 @@ void insertionSort(int n, vector<int> &arr){
    int i = 1;
    while (i<n)
    {
+    // we using temp bcz place of arr[i] is updated in after if condition
+    int temp = arr[i];
      int j = i-1;
      while (j>=0)
      {
-        if(arr[j]>arr[i]){
+        if(arr[j]>temp){
             arr[j+1] = arr[j];
         }else{
             break;
         }
         j--;
      }
-     arr[j+1] = arr[i];
+     arr[j+1] = temp;
      i++;
    }
   
